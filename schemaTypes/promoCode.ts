@@ -16,7 +16,7 @@ export const promoCode = defineType({
       title: 'Відсоток знижки',
       type: 'number',
       options: {
-        list: [5, 10, 15],
+        list: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 99],
       },
       validation: (Rule) => Rule.required(),
     }),

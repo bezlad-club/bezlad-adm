@@ -37,6 +37,24 @@ export default defineConfig({
                   .filter('_type == "gallery"')
                   .defaultOrdering([{field: '_updatedAt', direction: 'desc'}]),
               ),
+            S.listItem()
+              .title('Промокоди')
+              .schemaType('promoCode')
+              .child(
+                S.documentList()
+                  .title('Промокоди')
+                  .filter('_type == "promoCode"')
+                  .defaultOrdering([{field: '_updatedAt', direction: 'desc'}]),
+              ),
+            S.listItem()
+              .title('Резервації промокодів')
+              .schemaType('promoCodeReservation')
+              .child(
+                S.documentList()
+                  .title('Резервації промокодів')
+                  .filter('_type == "promoCodeReservation"')
+                  .defaultOrdering([{field: 'reservedAt', direction: 'desc'}]),
+              ),
           ]),
     }),
     visionTool(),
