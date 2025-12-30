@@ -62,6 +62,14 @@ export const promoCode = defineType({
       initialValue: 0,
       readOnly: true,
     }),
+    defineField({
+      name: 'applicableServices',
+      title: 'Застосовується до послуг',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'service' }] }],
+      description: 'Виберіть послуги, до яких застосовується промокод',
+      validation: (Rule) => Rule.required().min(1).error('Виберіть хоча б одну послугу'),
+    }),
   ],
   preview: {
     select: {
