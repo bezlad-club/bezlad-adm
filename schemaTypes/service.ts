@@ -24,7 +24,6 @@ export const service = defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'price',
@@ -37,12 +36,6 @@ export const service = defineType({
       title: 'Порядок відображення',
       type: 'number',
       validation: (Rule) => Rule.required().min(0),
-    }),
-    defineField({
-      name: 'paymentUrl',
-      title: 'Посилання на оплату',
-      type: 'url',
-      validation: (Rule) => Rule.required().uri({allowRelative: false}),
     }),
   ],
   preview: {
