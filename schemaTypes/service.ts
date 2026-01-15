@@ -37,6 +37,12 @@ export const service = defineType({
       type: 'number',
       validation: (Rule) => Rule.required().min(0),
     }),
+    defineField({
+      name: 'paymentUrl',
+      title: 'Посилання на оплату',
+      type: 'url',
+      validation: (Rule) => Rule.required().uri({allowRelative: false}),
+    }),
   ],
   preview: {
     select: {
