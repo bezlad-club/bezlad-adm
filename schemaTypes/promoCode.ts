@@ -15,10 +15,9 @@ export const promoCode = defineType({
       name: 'discountPercent',
       title: 'Відсоток знижки',
       type: 'number',
-      options: {
-        list: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 99],
-      },
-      validation: (Rule) => Rule.required(),
+      description: 'Введіть значення від 1 до 100',
+      validation: (Rule) =>
+        Rule.required().min(1).max(100),
     }),
     defineField({
       name: 'applicableServices',
