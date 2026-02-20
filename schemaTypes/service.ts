@@ -18,6 +18,11 @@ export const service = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'second_description',
+      title: 'Додатковий опис',
+      type: 'string',
+    }),
+    defineField({
       name: 'image',
       title: 'Зображення',
       type: 'image',
